@@ -3,7 +3,7 @@ import combineClasses from 'classnames';
 import fa from '@fortawesome/fontawesome-free/css/all.css';
 import far from '@fortawesome/fontawesome-free/css/regular.css';
 
-const createIcon = (cssClass, ...otherClasses) => (props) => {
+const createIcon = (cssClass, ...otherClasses) => (props) => { 
   const { className, ...otherProps } = props;
   const combinedClasses = combineClasses(cssClass, className, ...otherClasses);
   return <i className={combinedClasses} {...otherProps} />;

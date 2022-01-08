@@ -11,6 +11,10 @@ export default {
   external: ['@babel/runtime', 'react', 'react-dom'],
   output: [
     {
+      file: pack.systemJSModule,
+      format: 'system'
+    },
+    {
       file: pack.module,
       format: 'es'
     },
