@@ -1,6 +1,6 @@
 import UnitConverter from './UnitConverter';
 
-class ConvertableValue {
+class ConvertableValue { 
   constructor(value, unit) {
     this.value = value;
     this.unit = unit;
@@ -26,9 +26,4 @@ class ConvertableValue {
   }
 }
 
-class Temperature extends ConvertableValue {}
-
-class Pressure extends ConvertableValue {}
-
 export default ConvertableValue;
-export { Temperature, Pressure };

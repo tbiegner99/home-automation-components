@@ -45,7 +45,7 @@ const Units = {
   },
   getPreferredUnit
 };
-Units.American = {
+Units.AmericanUnits = {
   Temperature: [Units.Temperature.FARENHEIT],
   Pressure: [Units.Pressure.MILLIBARS],
   Distance: [Units.Distance.FEET, Units.Distance.MILES],
@@ -110,6 +110,6 @@ Units.DirectionOrder = [
   Units.Direction.NORTH_NORTH_WEST
 ];
 
-const { DirectionOrder, Direction, Scientific, American, Metric } = Units;
-export { DirectionOrder, Direction, Scientific, American, Metric };
+const { DirectionOrder, Direction, Scientific, AmericanUnits, Metric } = Units;
+export { DirectionOrder, Direction, Scientific, AmericanUnits, Metric, getPreferredUnit };
 export default Units;

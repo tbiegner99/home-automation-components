@@ -12,6 +12,7 @@ export const createIconComponent = (...classes) => createIcon(fa.fa, ...classes)
 
 export const createRegularIconComponent = (...classes) => createIconComponent(far.far, ...classes);
 
+export const RefreshIcon = createIconComponent(fa['fa-sync']);
 export const DeleteIcon = createIconComponent(fa['fa-trash']);
 export const MoveUpIcon = createIconComponent(fa['fa-caret-up']);
 export const MoveDownIcon = createIconComponent(fa['fa-caret-down']);

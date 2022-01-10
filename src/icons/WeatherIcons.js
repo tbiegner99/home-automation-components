@@ -1,5 +1,8 @@
 import fa from '@fortawesome/fontawesome-free/css/all.css';
 import { createIconComponent } from './Icons';
+import sunsetIcon from './compositeIcons/SunsetIcon';
+import sunriseIcon from './compositeIcons/SunriseIcon';
+
 
 export const Cloudy = createIconComponent(fa['fa-cloud']);
 export const Sunny = createIconComponent(fa['fa-sun']);
@@ -13,3 +16,6 @@ export const Thunder = createIconComponent(fa['fa-bolt']);
 export const Fog = createIconComponent(fa['fa-smog']);
 
 export const Unknown = createIconComponent(fa['fa-question']);
+
+export const SunsetIcon = sunsetIcon;
+export const SunriseIcon = sunriseIcon;

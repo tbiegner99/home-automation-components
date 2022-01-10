@@ -1,2 +1,2 @@
 export * from "./Icons"
-export * from "./WeatherIcons"
+export * from "./WeatherIcons" 
