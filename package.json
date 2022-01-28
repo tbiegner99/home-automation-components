@@ -1,6 +1,6 @@
 {
   "name": "@tbiegner99/home-automation-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "components for the home automation project",
   "main": "build/home-automation-components.js",
   "module": "build/home-automation-components.es.js",
