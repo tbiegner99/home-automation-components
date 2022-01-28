@@ -1,4 +1,4 @@
-import moment from 'moment';
+import dayjs from 'dayjs';
 import SunsetCalculator from './SunsetCalculator';
 import { LATITUDE, LONGITUDE } from './Constants';
 
@@ -12,7 +12,7 @@ class Utilities {
   }
 
   static isNight() {
-    const now = moment();
+    const now = dayjs();
     const { sunrise, sunset } = new SunsetCalculator(LATITUDE, LONGITUDE).calculate();
     return now.isAfter(sunset) || now.isBefore(sunrise);
   }

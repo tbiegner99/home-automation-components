@@ -1,3 +1,4 @@
-import LongArrowAlt from '@fortawesome/fontawesome-free/svgs/solid/long-arrow-alt-up.svg';
+import {faLongArrowAltUp} from '@fortawesome/free-solid-svg-icons';
+import { createIcon } from '../Icons'; 
 
-export default LongArrowAlt;
+export default createIcon(faLongArrowAltUp);

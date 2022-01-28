@@ -1,5 +1,5 @@
 import React from 'react';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 
 class CurrentTime extends React.Component {
@@ -16,7 +16,7 @@ class CurrentTime extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentTime: moment()
+      currentTime: dayjs()
     };
   }
 
@@ -30,7 +30,7 @@ class CurrentTime extends React.Component {
 
   updateTime() {
     this.setState({
-      currentTime: moment()
+      currentTime: dayjs()
     });
   }
 

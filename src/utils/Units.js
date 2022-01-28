@@ -54,7 +54,7 @@ Units.AmericanUnits = {
   Speed: [Units.Speed.MILES_PER_HOUR],
   Time: [Units.Time.HOUR_12]
 };
-Units.Metric = {
+Units.MetricUnits = {
   Temperature: [Units.Temperature.CELCIUS],
   Pressure: [Units.Pressure.PASCALS],
   Distance: [Units.Distance.FEET, Units.Distance.MILES],
@@ -110,6 +110,6 @@ Units.DirectionOrder = [
   Units.Direction.NORTH_NORTH_WEST
 ];
 
-const { DirectionOrder, Direction, Scientific, AmericanUnits, Metric } = Units;
-export { DirectionOrder, Direction, Scientific, AmericanUnits, Metric, getPreferredUnit };
+const { DirectionOrder, Direction, Scientific, AmericanUnits, MetricUnits } = Units;
+export { DirectionOrder, Direction, Scientific, AmericanUnits, MetricUnits, getPreferredUnit };
 export default Units;

@@ -3,7 +3,7 @@ import combineClasses from 'classnames';
 import { Button } from '@tbiegner99/react-forms';
 import Modal from '../elements/modal/Modal';
 import styles from './promptDialog.css';
-import { H1, H2, H3 } from '../elements/headers/Headers';
+import { H2 } from '../elements/headers/Headers';
 
 const PromptDialog = (props) => (
   <Modal className={combineClasses(props.className, styles.promptDialog)}>

@@ -1,8 +1,10 @@
 import React from 'react';
-import Sun from '@fortawesome/fontawesome-free/svgs/solid/sun.svg';
-import ArrowDown from '@fortawesome/fontawesome-free/svgs/solid/arrow-down.svg';
+import { faSun,faArrowDown } from "@fortawesome/free-solid-svg-icons"
 import styles from './sunriseIcon.css';
+import { createGraphicIcon } from '../Icons';
 
+const Sun = createGraphicIcon(faSun) 
+const ArrowDown = createGraphicIcon(faArrowDown)
 const SunsetIcon = (props) => ( 
   <div className={props.className}>
     <svg viewBox="0 15 100 100">

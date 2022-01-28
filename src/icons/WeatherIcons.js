@@ -1,21 +1,21 @@
-import fa from '@fortawesome/fontawesome-free/css/all.css';
-import { createIconComponent } from './Icons';
+import {faCloud,faSun,faMoon,faCloudSun,faCloudRain,faBolt,faSmog,faQuestion,faWind,faSnowflake} from '@fortawesome/free-solid-svg-icons';
+import { createIcon } from './Icons';
 import sunsetIcon from './compositeIcons/SunsetIcon';
 import sunriseIcon from './compositeIcons/SunriseIcon';
 
 
-export const Cloudy = createIconComponent(fa['fa-cloud']);
-export const Sunny = createIconComponent(fa['fa-sun']);
-export const Moon = createIconComponent(fa['fa-moon']);
-export const MostlyCloudy = createIconComponent(fa['fa-cloud-sun']);
-export const PartlyCloudy = createIconComponent(fa['fa-cloud-sun']);
-export const Rain = createIconComponent(fa['fa-cloud-rain']);
-export const Snow = createIconComponent(fa['fa-cloud-snowflake']);
-export const Windy = createIconComponent(fa['fa-wind']);
-export const Thunder = createIconComponent(fa['fa-bolt']);
-export const Fog = createIconComponent(fa['fa-smog']);
+export const Cloudy = createIcon(faCloud);
+export const Sunny = createIcon(faSun);
+export const Moon = createIcon(faMoon);
+export const MostlyCloudy = createIcon(faCloudSun);
+export const PartlyCloudy = createIcon(faCloudSun);
+export const Rain = createIcon(faCloudRain);
+export const Snow = createIcon(faSnowflake);
+export const Windy = createIcon(faWind);
+export const Thunder = createIcon(faBolt);
+export const Fog = createIcon(faSmog);
 
-export const Unknown = createIconComponent(fa['fa-question']);
+export const Unknown = createIcon(faQuestion);
 
 export const SunsetIcon = sunsetIcon;
 export const SunriseIcon = sunriseIcon;

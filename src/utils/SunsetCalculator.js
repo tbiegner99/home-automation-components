@@ -1,4 +1,4 @@
-import moment from 'moment';
+import dayjs from 'dayjs';
 import ConvertableValue from './ConvertableValue';
 import Units from './Units';
 
@@ -20,8 +20,8 @@ const normalizeAngle = (angle) => normalize(angle, 0, 360);
 /* http://www.edwilliams.org/sunrise_sunset_algorithm.htm */
 
 class SunsetCalculator {
-  constructor(lat, long, date = moment()) {
-    this.date = moment(date);
+  constructor(lat, long, date = dayjs()) {
+    this.date = dayjs(date);
     this.latitude = lat;
     this.longitude = long;
   }
@@ -146,7 +146,7 @@ class SunsetCalculator {
     const { Trise, Tset } = this.getLocalMeanTime();
     const getTimeFromHour = (tValue) => {
       const normalizedHour = normalizeHour(tValue - this.longitudeHour);
-      const hourToTime = moment()
+      const hourToTime = dayjs()
         .utc()
         .startOf('day')
         .add(normalizedHour, 'hours');
@@ -168,7 +168,7 @@ class SunsetCalculator {
 
   calculate() {
     const { sunrise, sunset } = this.getMeanTimeInUTC();
-    const daylight = moment.duration(sunset.diff(sunrise));
+    const daylight = dayjs.duration(sunset.diff(sunrise));
     return {
       sunrise,
       sunset,

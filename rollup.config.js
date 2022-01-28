@@ -1,15 +1,18 @@
 import resolve from '@rollup/plugin-node-resolve';
+import { terser } from 'rollup-plugin-terser';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
 import styles from 'rollup-plugin-styles';
 import svgr from "@svgr/rollup"
+import { visualizer } from 'rollup-plugin-visualizer';
+
 import pack from './package.json';
 
 export default {
   input: './src/index.js',
   // external: ['@babel/runtime'],
-  external: ['@babel/runtime', 'react', 'react-dom'],// , "@tbiegner99/react-forms"],
+  external: ['@babel/runtime', 'react', 'react-dom','react-is','prop-types'],// , "@tbiegner99/react-forms"],
   output: [
     {
       file: pack.systemJSModule,
@@ -25,7 +28,7 @@ export default {
     }
   ],
   plugins: [
-    resolve(),
+    resolve(), 
     styles({
       autoModules: true,
       modules: true
@@ -33,6 +36,8 @@ export default {
     json(),
     svgr(),
     babel({ babelHelpers: 'runtime', skipPreflightCheck: true, exclude: 'node_modules/**' }),
-    commonjs()
+    commonjs(),
+    terser(),
+    visualizer()
   ]
 };

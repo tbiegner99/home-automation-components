@@ -1,18 +1,13 @@
 import React from 'react';
-import combineClasses from 'classnames';
-import fa from '@fortawesome/fontawesome-free/css/all.css';
-import far from '@fortawesome/fontawesome-free/css/regular.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSync,faTrash, faCaretUp,faCaretDown} from "@fortawesome/free-solid-svg-icons"
 
-const createIcon = (cssClass, ...otherClasses) => (props) => { 
-  const { className, ...otherProps } = props;
-  const combinedClasses = combineClasses(cssClass, className, ...otherClasses);
-  return <i className={combinedClasses} {...otherProps} />;
-};
-export const createIconComponent = (...classes) => createIcon(fa.fa, ...classes);
+// eslint-disable-next-line react/jsx-props-no-spreading
+export const createIcon = (icon) => (props) => <i {...props} ><FontAwesomeIcon icon={icon}/></i>;
+export const createGraphicIcon = (icon) => (props) => <g {...props} ><FontAwesomeIcon icon={icon}/></g>;
 
-export const createRegularIconComponent = (...classes) => createIconComponent(far.far, ...classes);
 
-export const RefreshIcon = createIconComponent(fa['fa-sync']);
-export const DeleteIcon = createIconComponent(fa['fa-trash']);
-export const MoveUpIcon = createIconComponent(fa['fa-caret-up']);
-export const MoveDownIcon = createIconComponent(fa['fa-caret-down']);
+export const RefreshIcon = createIcon(faSync);
+export const DeleteIcon = createIcon(faTrash);
+export const MoveUpIcon = createIcon(faCaretUp);
+export const MoveDownIcon = createIcon(faCaretDown);

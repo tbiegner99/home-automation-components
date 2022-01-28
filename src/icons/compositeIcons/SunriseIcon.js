@@ -1,7 +1,9 @@
 import React from 'react';
-import Sun from '@fortawesome/fontawesome-free/svgs/solid/sun.svg';
-import ArrowUp from '@fortawesome/fontawesome-free/svgs/solid/arrow-up.svg';
-import styles from './sunriseIcon.css';
+import { faSun,faArrowUp } from "@fortawesome/free-solid-svg-icons"
+import { createGraphicIcon } from '../Icons';
+
+const Sun = createGraphicIcon(faSun) 
+const ArrowUp = createGraphicIcon(faArrowUp)
 
 const SunriseIcon = (props) => (
   <div className={props.className}>

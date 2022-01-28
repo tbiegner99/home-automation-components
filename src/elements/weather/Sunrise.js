@@ -1,5 +1,5 @@
 import React from 'react';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import combineClasses from 'classnames';
 import { SunsetIcon, SunriseIcon } from '../../icons/WeatherIcons';
 import SunsetCalculator from '../../utils/SunsetCalculator';
@@ -42,17 +42,17 @@ class SunriseDisplay extends React.Component {
     const { Time: tempUnits = AmericanUnits.Time } = units;
     const unit = Array.isArray(tempUnits) ? tempUnits[0] : tempUnits;
     const classes = combineClasses(styles.sunset, className);
-    const daylight = moment.duration(sunset.diff(sunrise)).as('hours');
+    const daylight = dayjs.duration(sunset.diff(sunrise)).as('hours');
 
     return (
       <div className={classes}>
         <div className={styles.sunData}>
           <SunriseIcon className={styles.sunIcon} />
-          <div className={styles.text}>{moment(sunrise).format(unit)}</div>
+          <div className={styles.text}>{dayjs(sunrise).format(unit)}</div>
         </div>
         <div className={styles.sunData}>
           <SunsetIcon className={styles.sunIcon} />
-          <div className={styles.text}>{moment(sunset).format(unit)}</div>
+          <div className={styles.text}>{dayjs(sunset).format(unit)}</div>
         </div>
         {showDaylight && <b className={styles.daylight}>Daylight: {daylight.toFixed(2)} hours</b>}
       </div>
