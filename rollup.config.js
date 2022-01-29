@@ -11,8 +11,7 @@ import pack from './package.json';
 
 export default {
   input: './src/index.js',
-  // external: ['@babel/runtime'],
-  external: ['@babel/runtime', 'react', 'react-dom','react-is','prop-types'],// , "@tbiegner99/react-forms"],
+  external: ['@babel/runtime', 'react', 'react-dom','prop-types'],// , "@tbiegner99/react-forms"],
   output: [
     {
       file: pack.systemJSModule,
@@ -37,7 +36,7 @@ export default {
     svgr(),
     babel({ babelHelpers: 'runtime', skipPreflightCheck: true, exclude: 'node_modules/**' }),
     commonjs(),
-    terser(),
+    // terser(),
     visualizer()
   ]
 };

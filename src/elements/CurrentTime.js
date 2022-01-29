@@ -10,7 +10,7 @@ class CurrentTime extends React.Component {
 
   static defaultProps = {
     className: null,
-    format: 'dddd MMM Do YYYY hh:mm a'
+    format: 'dddd MMM D YYYY hh:mm a'
   };
 
   constructor(props) {

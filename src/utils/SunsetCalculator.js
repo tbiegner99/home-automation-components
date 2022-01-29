@@ -1,6 +1,14 @@
 import dayjs from 'dayjs';
+import dayOfYear from 'dayjs/plugin/dayOfYear'
+import utc from 'dayjs/plugin/utc'
+import duration from 'dayjs/plugin/duration'
 import ConvertableValue from './ConvertableValue';
 import Units from './Units';
+
+dayjs.extend(dayOfYear)
+dayjs.extend(utc)
+dayjs.extend(duration)
+
 
 const asRadians = (angle) =>
   new ConvertableValue(angle, Units.Angle.DEGREES).convertToValue(Units.Angle.RADIANS);
@@ -20,8 +28,8 @@ const normalizeAngle = (angle) => normalize(angle, 0, 360);
 /* http://www.edwilliams.org/sunrise_sunset_algorithm.htm */
 
 class SunsetCalculator {
-  constructor(lat, long, date = dayjs()) {
-    this.date = dayjs(date);
+  constructor(lat, long, date) {
+    this.date = date?dayjs(date):dayjs();
     this.latitude = lat;
     this.longitude = long;
   }

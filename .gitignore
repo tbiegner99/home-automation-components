@@ -3,3 +3,4 @@ coverage
 .vscode
 build
 bin
+stats.html
