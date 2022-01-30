@@ -5,7 +5,7 @@
   "main": "build/home-automation-components.js",
   "module": "build/home-automation-components.es.js",
   "systemJSModule": "build/home-automation-components.system.js",
-  "sideEffects": "false",
+  "sideEffects": false,
   "directories": {
     "lib": "src"
   },
@@ -19,6 +19,7 @@
   "author": "TJ Biegner",
   "license": "MIT",
   "scripts": {
+    "serve": "http-server --cors='*' -p 8182 ./build ",
     "test": "jest --config jest.config.js",
     "coverage": "npm run test -- --coverage",
     "dev": "rollup --watch -c ./rollup.config.js",
@@ -46,6 +47,7 @@
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.1.3",
+    "@rollup/plugin-replace": "^3.0.1",
     "@storybook/addon-actions": "^5.3.21",
     "@storybook/addon-knobs": "^5.3.17",
     "@storybook/addon-links": "^5.3.21",
@@ -70,6 +72,7 @@
     "eslint-plugin-react": "^7.28.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "http-server": "^14.1.0",
     "husky": "^0.14.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
@@ -92,7 +95,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
-    "@tbiegner99/react-forms": "^1.1.2",
+    "@tbiegner99/react-forms": "^1.1.3",
     "auto-bind-inheritance": "^1.0.6",
     "classnames": "^2.2.6",
     "dayjs": "^1.10.7",

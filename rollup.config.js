@@ -1,3 +1,5 @@
+import replace from '@rollup/plugin-replace';
+
 import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 import babel from '@rollup/plugin-babel';
@@ -27,6 +29,11 @@ export default {
     }
   ],
   plugins: [
+    replace({
+      'process.env.NODE_ENV': JSON.stringify('production'),
+      __buildDate__: () => JSON.stringify(new Date()),
+      __buildVersion: 15
+    }),
     resolve(), 
     styles({
       autoModules: true,
@@ -34,7 +41,7 @@ export default {
     }),
     json(),
     svgr(),
-    babel({ babelHelpers: 'runtime', skipPreflightCheck: true, exclude: 'node_modules/**' }),
+    babel({  skipPreflightCheck: true}),
     commonjs(),
     terser(),
     visualizer()
