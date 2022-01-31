@@ -41,9 +41,9 @@ export default {
     }),
     json(),
     svgr(),
-    babel({  skipPreflightCheck: true}),
+    babel({  babelHelpers:'runtime', skipPreflightCheck: true, exclude: 'node_modules/**' }),
     commonjs(),
-    terser(),
+    // terser(),
     visualizer()
   ]
 };
