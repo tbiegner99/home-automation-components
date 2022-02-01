@@ -19,7 +19,7 @@
   "author": "TJ Biegner",
   "license": "MIT",
   "scripts": {
-    "serve": "http-server --cors='*' -p 8182 ./build ",
+    "serve": "http-server --cors='*' -c-1 -p 8182 ./build ",
     "test": "jest --config jest.config.js",
     "coverage": "npm run test -- --coverage",
     "dev": "rollup --watch -c ./rollup.config.js",
