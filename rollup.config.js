@@ -34,15 +34,18 @@ export default {
       __buildDate__: () => JSON.stringify(new Date()),
       __buildVersion: 15
     }),
-    resolve(), 
+    resolve({
+    }), 
     styles({
       autoModules: true,
       modules: true
     }),
     json(),
     svgr(),
-    babel({  babelHelpers:'runtime', skipPreflightCheck: true, exclude: 'node_modules/**' }),
-    commonjs(),
+    babel({   skipPreflightCheck: true}),
+    commonjs({
+      exclude:["@tbiegner99/react-forms"]
+    }),
     // terser(),
     visualizer()
   ]
