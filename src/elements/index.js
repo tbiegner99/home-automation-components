@@ -5,3 +5,4 @@ export * from './inputs';
 export * from './list';
 export * from './modal';
 export * from './weather';
+export * from './buttons';

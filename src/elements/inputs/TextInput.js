@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import combineClasses from 'classnames';
 import { TextInput as FormTextInput } from '@tbiegner99/react-forms';
-import OnScreenKeyboard from '../elements/on-screen-keyboard';
+import OnScreenKeyboard from '../on-screen-keyboard';
+import styles from './textInput.css';
 
 class TextInput extends React.Component {
   static contextTypes = { rootForm: PropTypes.object };
@@ -10,7 +12,7 @@ class TextInput extends React.Component {
     super(props);
     this.state = {
       isFocused: false,
-      value: props.defaultValue || props.value || ''
+      value: props.defaultValue || props.value || '',
     };
   }
 
@@ -88,7 +90,12 @@ class TextInput extends React.Component {
 
   shouldRenderOnScreenKeyboard() {
     const { isFocused } = this.state;
-    return isFocused;
+    const { showKeyboard } = this.props;
+    const isTouchScreenDevice =
+      'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+    const shouldShowKeyboard =
+      showKeyboard || (typeof showKeyboard !== 'boolean' && isTouchScreenDevice);
+    return isFocused && shouldShowKeyboard;
   }
 
   renderOnScreenKeyboard() {
@@ -107,11 +114,16 @@ class TextInput extends React.Component {
   render() {
     const InputComponent = this.inputComponent;
     return (
-      <div onFocus={(evt) => this.handleFocus(evt)} onBlur={(evt) => this.handleBlur(evt)}>
+      <div
+        className={styles.inputContainer}
+        onFocus={(evt) => this.handleFocus(evt)}
+        onBlur={(evt) => this.handleBlur(evt)}
+      >
         {this.renderOnScreenKeyboard()}
         <InputComponent
           ref="input"
           {...this.props}
+          className={combineClasses(styles.textInput, this.props.className)}
           onChange={this.handleChange.bind(this)}
           value={this.getInputValue()}
         />
