@@ -25,15 +25,14 @@ const ItemInfo = (props) => {
 };
 
 const ItemActions = (props) => {
-  const { onDelete } = props;
+  const { onDelete, deleteIcon } = props;
   return (
     <div>
       {renderMoveUpIcon(props)}
       {renderMoveDownIcon(props)}
-      <DeleteIcon
-        onClick={onDelete}
-        className={combineClasses(styles.actionIcon, styles.deleteIcon)}
-      />
+      <div onClick={onDelete} className={combineClasses(styles.actionIcon, styles.deleteIcon)}>
+        {deleteIcon ? deleteIcon : <DeleteIcon />}
+      </div>
     </div>
   );
 };
@@ -42,12 +41,13 @@ const ListItem = (props) => {
   const {
     title,
     subtitle,
+    deleteIcon,
     onClick,
     onDelete,
     onMoveUp,
     onMoveDown,
     canMoveUp,
-    canMoveDown
+    canMoveDown,
   } = props;
   const clickable = typeof onClick === 'function';
   return (
@@ -57,6 +57,7 @@ const ListItem = (props) => {
     >
       <ItemInfo title={title} subtitle={subtitle} />
       <ItemActions
+        deleteIcon={deleteIcon}
         onDelete={onDelete}
         onMoveUp={onMoveUp}
         onMoveDown={onMoveDown}

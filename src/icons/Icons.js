@@ -9,6 +9,7 @@ import {
   faPlus,
   faBars,
   faTimes,
+  faSquare,
 } from '@fortawesome/free-solid-svg-icons';
 
 export const createIcon = (icon) => (props) =>
@@ -32,3 +33,4 @@ export const HomeIcon = createIcon(faHome);
 export const AddIcon = createIcon(faPlus);
 export const HamburgerIcon = createIcon(faBars);
 export const CloseIcon = createIcon(faTimes);
+export const StopIcon = createIcon(faSquare);

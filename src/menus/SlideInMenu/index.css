@@ -1,45 +1,45 @@
 .parent {
-    position:relative;
-    border:1px solid black;
-
-
+  position: relative;
+  border: 1px solid black;
 }
 .slideInMenu {
-    z-index:10000;
-    top: 0;
-    position: absolute;
-    pointer-events: none;
+  z-index: 10000;
+  top: 0;
+  position: absolute;
+  pointer-events: none;
 }
 
 .menuContainer {
-    transition: all 1000ms;
-    height:100vh;
-    background: white;
-    pointer-events: all;
-    margin:0;
+  transition: all 1000ms;
+  height: 100vh;
+  background: white;
+  pointer-events: all;
+  margin: 0;
+  box-shadow: 1px 1px 5px 1px #888888;
+  border-right: 1px solid #888;
 }
 
-.slideInMenu.left{
-    left:0;
+.slideInMenu.left {
+  left: 0;
 }
 
-.slideInMenu.right{
-    right:0;
-    overflow: hidden;
+.slideInMenu.right {
+  right: 0;
+  overflow: hidden;
 }
 
 .slideInMenu.left .menuContainer {
-    transform:translateX(-100%);
+  transform: translateX(-130%);
 }
 
-.slideInMenu.left.open .menuContainer{
-    transform:translateX(0%)
+.slideInMenu.left.open .menuContainer {
+  transform: translateX(0%);
 }
 
 .slideInMenu.right .menuContainer {
-    transform:translateX(100%);
+  transform: translateX(100%);
 }
 
-.slideInMenu.right.open .menuContainer{
-    transform:translateX(0%)
+.slideInMenu.right.open .menuContainer {
+  transform: translateX(0%);
 }
