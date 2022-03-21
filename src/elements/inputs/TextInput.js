@@ -91,10 +91,13 @@ class TextInput extends React.Component {
   shouldRenderOnScreenKeyboard() {
     const { isFocused } = this.state;
     const { showKeyboard } = this.props;
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
     const isTouchScreenDevice =
       'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
     const shouldShowKeyboard =
-      showKeyboard || (typeof showKeyboard !== 'boolean' && isTouchScreenDevice);
+      showKeyboard || (typeof showKeyboard !== 'boolean' && isTouchScreenDevice && !isMobile);
     return isFocused && shouldShowKeyboard;
   }
 

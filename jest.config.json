@@ -1,0 +1,23 @@
+{
+  "verbose": true,
+  "moduleFileExtensions": ["js", "mjs"],
+  "transform": {
+    "^.+\\.js$": "babel-jest",
+    "^.+\\.mjs$": "babel-jest"
+  },
+  "moduleNameMapper": {
+    "\\.css": "identity-obj-proxy",
+    "^@tbiegner99/react-forms": "<rootDir>/node_modules/@tbiegner99/react-forms/build/cjs/src/main.js"
+  },
+  "testMatch": ["**/test/**/*.spec.js"],
+  "collectCoverageFrom": ["**/src/**/*.js"],
+  "setupFiles": ["./test/init.js"],
+  "coverageThreshold": {
+    "global": {
+      "branches": 0,
+      "functions": 0,
+      "lines": 0,
+      "statements": 0
+    }
+  }
+}
